@@ -8,7 +8,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class fournisseur extends Model
 {
+
     use HasFactory;
+
+ protected $fillable = [
+    'nom',
+    'prenom',
+    'adresse',
+    'email',
+    'telephone'
+
+ ];
+ 
+
     public function produits()
      {
        return $this->hasMany(produit::class);
